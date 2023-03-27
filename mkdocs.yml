@@ -1,0 +1,98 @@
+site_name: Plural
+
+site_url: https://plural-lang.org/
+
+nav:
+    - 1. 'Getting started' :
+        - 'XXXX': chapter_01/ch01_0010.md
+    - 2. 'Types' :
+        - 'YYYY': chapter_02/ch02_0010.md
+
+
+theme:
+
+  name: material
+
+  logo: assets/plural_logo_white.svg
+  favicon: assets/favicon.svg
+
+  # See https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/
+  font:
+    text: Fira Sans
+    code: Fira Code
+
+  palette:
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - content.code.copy # Copy code blocks
+    - navigation.instant
+    #- navigation.tracking
+    - search.suggest
+    - search.highlight
+
+  custom_dir: overrides
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - def_list
+  - smarty
+  - pymdownx.tasklist:
+      custom_checkbox: true  
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg 
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+plugins:
+  # Enable explicitly in case we add other plug ins.
+  # See: https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/
+  - search: 
+      lang: en
+
+copyright: Copyright &copy; 2023 Tim Gordon
+
+extra:
+  #generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/tim-gordon-8b59b180/
+      name: Tim on LinkedIn
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
