@@ -1,3 +1,3 @@
-# Welcome to Tea
+# Welcome to Plural
 
 **TBC**

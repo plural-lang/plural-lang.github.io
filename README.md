@@ -1,2 +1,1 @@
-# plural-lang.github.io
-Plural programming guide
+# The Plural programming guide
