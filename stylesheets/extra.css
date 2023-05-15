@@ -1,0 +1,4 @@
+/* Fix scroll bars appearing on math blocks */
+.md-typeset div.arithmatex {
+    overflow: initial;
+  }
