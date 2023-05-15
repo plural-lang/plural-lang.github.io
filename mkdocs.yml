@@ -3,11 +3,26 @@ site_name: Plural
 site_url: https://plural-lang.org/
 
 nav:
-    - 1. 'Getting started' :
-        - 'XXXX': chapter_01/ch01_0010.md
-    - 2. 'Types' :
-        - 'YYYY': chapter_02/ch02_0010.md
-
+    - Home :
+        - Plural: index.md
+        - Something else: 1_home/aaa.md
+        - Something else 2: 1_home/bbb.md
+    - Getting started :
+        - Set up: 2_getting_started/aaa.md
+        - IDEs: 2_getting_started/bbb.md
+    - Docs :
+        - Introduction :
+            - Hello world: 3_docs/aaa.md
+            - Indentation: 3_docs/bbb.md
+        - Types :
+            - Hello world 2: 3_docs/b1.md
+            - Indentation 2: 3_docs/b2.md
+        - Control flow :
+            - Hello world 3: 3_docs/c1.md
+            - Indentation 3: 3_docs/c2.md
+            - Indentation 4: 3_docs/c3.md
+    - Blog :
+        - 2023 : 4_blog/2023.md
 
 theme:
 
@@ -43,8 +58,18 @@ theme:
 
   features:
     - content.code.copy # Copy code blocks
+    - content.tabs.link
+    #- navigation.sections 
     - navigation.instant
-    #- navigation.tracking
+    - navigation.tabs # Top level is treated as menu
+    #- navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.indexes # Headings can be docs too
+    - navigation.expand # Headings on left expand when visit page
+    - navigation.footer
+    - navigation.top    
+    #- header.autohide
+    #- toc.integrate # MarkDown headings are on LHS NB Not compatible with navigation.indexes
     - search.suggest
     - search.highlight
 
@@ -67,6 +92,10 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.tabbed:
       alternate_style: true
+  - toc:
+      #permalink: true # Default heading links *after* title
+      permalink: '' # GitHub-style heading links *before* title
+      title: Page contents
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -79,7 +108,13 @@ plugins:
   # See: https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/
   - search: 
       lang: en
+  - tags:
+      enabled: !ENV [CI, false]
 
+repo_url: https://github.com/plural-lang/plural-lang.github.io
+
+site_description : The Plural programming language
+site_author: Tim Gordon
 copyright: Copyright &copy; 2023 Tim Gordon
 
 extra:
@@ -91,8 +126,10 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/github-permalink-style.css  # GitHub-style heading links *before* title
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
